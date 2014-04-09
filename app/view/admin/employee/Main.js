@@ -1,41 +1,17 @@
-Ext.define('RM.view.admin.qualifications.Main', {
+Ext.define('RM.view.admin.employee.Main', {
     extend: 'Ext.tab.Panel',
-    alias: 'widget.admin.qualifications.main',
+    alias: 'widget.admin.employee.main',
     plain: true,
     defaults: {
         autoScroll: true
     },
     items: [
     {
-        itemId: 'tab-skills',
+        itemId: 'tab-employee',
         title: 'Skills',
         layout: 'fit',
         items: [
-        { xtype: 'admin.qualifications.skill.grid' }
-        ]
-    },
-    {
-        itemId: 'tab-education',
-        title: 'Education',
-        layout: 'fit',
-        items: [
-         { xtype: 'container' /*'admin.qualifications.education.grid'*/ }
-        ]
-    },
-    {
-        itemId: 'tab-certification',
-        title: 'Certifications',
-        layout: 'fit',
-        items: [
-        { xtype:'container'/* 'admin.qualifications.certification.grid' */}
-        ]
-    },
-    {
-        itemId: 'tab-language',
-        title: 'Languages',
-        layout: 'fit',
-        items: [
-        { xtype: 'container' }
+        { xtype: 'admin.employee.grid' }
         ]
     }
     ],
