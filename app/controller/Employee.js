@@ -30,17 +30,17 @@ Ext.define('RM.controller.Employee', {
         var me = this;
 
         me.control({
-            '#new-employee-btn': {
+            '#new-employees-btn': {
                 click: me.handleNewBtnClick
             },
             'grid[xtype=admin.employee.grid]': {
                 editclick: me.handleEditIconClick,
                 deleteclick: me.handleDeleteIconClick
             },
-            '#cancel-employee-btn': {
+            '#cancel-employees-btn': {
                 click: me.hideSkillWindow
             },
-            '#save-employee-btn': {
+            '#save-employees-btn': {
                 click: me.handleSaveBtnClick
             }
         });
