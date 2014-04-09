@@ -1,27 +1,27 @@
-Ext.define('RM.controller.Qualifications', {
+Ext.define('RM.controller.Employee', {
     extend: 'RM.controller.Base',
     views: [
-        'admin.qualifications.Main',
-        'admin.qualifications.skill.Grid',
-        'admin.qualifications.skill.Toolbar',
-        'admin.qualifications.skill.Window',
-        'admin.qualifications.skill.Form'
+        'admin.employee.Main',
+        'admin.employee.Grid',
+        'admin.employee.Toolbar',
+        'admin.employee.Window',
+        'admin.employee.Form'
     ],
-    stores: ['Qualifications'],
-    models: ['Qualifications'],
+    stores: ['Employees'],
+    models: ['Employee'],
     refs: [
         {
             ref: 'toolbar',
-            selector: '[xtype=admin.qualifications.skill.toolbar]'
+            selector: '[xtype=admin.employee.toolbar]'
         },
         {
             ref: 'mainGrid',
-            selector: '[xtype=admin.qualifications.skill.grid]'
+            selector: '[xtype=admin.employee.grid]'
         },
         {
             ref: 'skillWindow',
-            selector: '[xtype=admin.qualifications.skill.window]',
-            xtype: 'admin.qualifications.skill.window',
+            selector: '[xtype=admin.employee.window]',
+            xtype: 'admin.employee.window',
             autoCreate: true
         }
     ],
@@ -30,17 +30,17 @@ Ext.define('RM.controller.Qualifications', {
         var me = this;
 
         me.control({
-            '#new-skills-btn': {
+            '#new-employee-btn': {
                 click: me.handleNewBtnClick
             },
-            'grid[xtype=admin.qualifications.skill.grid]': {
+            'grid[xtype=admin.employee.grid]': {
                 editclick: me.handleEditIconClick,
                 deleteclick: me.handleDeleteIconClick
             },
-            '#cancel-skills-btn': {
+            '#cancel-employee-btn': {
                 click: me.hideSkillWindow
             },
-            '#save-skills-btn': {
+            '#save-employee-btn': {
                 click: me.handleSaveBtnClick
             }
         });
@@ -53,7 +53,7 @@ Ext.define('RM.controller.Qualifications', {
     showSkillWindow: function(skill){
         var me = this,
             skillWindow = me.getSkillWindow();
-        skillWindow.setTitle("Edit Skill " + skill.get('Name'));
+        skillWindow.setTitle("Edit Employee " + skill.get('Name'));
         skillWindow.down('form').loadRecord(skill);
         skillWindow.show();
     },
@@ -68,7 +68,7 @@ Ext.define('RM.controller.Qualifications', {
     deleteSkill: function (skill, successCallback) {
         var me = this;
         Ext.Msg.show({
-            title: 'Delete Skill?',
+            title: 'Delete Employee ?',
             msg: 'Are you sure you want to delete this record?',
             button: Ext.Msg.YESNO,
             fn: function (respone) {
@@ -86,7 +86,7 @@ Ext.define('RM.controller.Qualifications', {
                                 msg = Ext.isObject(error) ? error.status + ' ' + error.statusText : error;
 
                             Ext.MessageBox.show({
-                                title: 'Delete Skill Failed',
+                                title: 'Delete Employee Failed',
                                 msg: msg,
                                 icon: Ext.Msg.ERROR,
                                 buttons: Ext.Msg.OK
@@ -111,7 +111,7 @@ Ext.define('RM.controller.Qualifications', {
 
         // Set the title
         me.resetForm();
-        skillWindow.setTitle('New Skill');
+        skillWindow.setTitle('New Employee');
         skillWindow.show();
     },
 
