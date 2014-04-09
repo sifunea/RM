@@ -107,7 +107,7 @@ Ext.define('RM.model.Employee', {
           type: 'string'
       },
       {
-          name: 'PrivateEmail'
+          name: 'PrivateEmail',
           type: 'string'
       },
       {
