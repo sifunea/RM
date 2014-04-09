@@ -1,10 +1,10 @@
-Ext.define('RM.view.admin.qualifications.skill.Grid', {
+Ext.define('RM.view.admin.employee.Grid', {
     extend: 'Ext.grid.Panel',
-    alias: 'widget.admin.qualifications.skill.grid',
+    alias: 'widget.admin.employee.grid',
     requires: [
         'Ext.toolbar.Paging'
     ],
-    store: 'Qualifications',
+    store: 'Employees',
     layout: 'fit',
     tripeRows: true,
    // title: 'All Company Structures',
@@ -14,7 +14,7 @@ Ext.define('RM.view.admin.qualifications.skill.Grid', {
     },
     selType: 'rowmodel',
     dockedItems: [
-   		{ xtype: 'admin.qualifications.skill.toolbar' }
+   		{ xtype: 'admin.employee.toolbar' }
     ],
 
     initComponent: function () {
@@ -68,7 +68,7 @@ Ext.define('RM.view.admin.qualifications.skill.Grid', {
         };
 
         me.bbar = Ext.create('Ext.PagingToolbar', {
-            store: 'Qualifications',
+            store: 'Employees',
             displayInfo: true,
             displayMsg: 'Displaying records {0} - {1} of {2}',
             emptyMsg: "No records to display"
