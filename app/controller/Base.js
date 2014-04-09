@@ -1,4 +1,3 @@
 Ext.define('RM.controller.Base', {
-  extend: ''
-  
+  extend: 'Ext.app.Controller'
 });
