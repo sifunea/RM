@@ -1,10 +1,10 @@
 /*
  * Window for adding/editing {@link RM.model.CompanyStructure} record
  */
-Ext.define('RM.view.admin.qualifications.skill.Window', {
+Ext.define('RM.view.admin.employee.Window', {
     extend: 'Ext.window.Window',
-    alias: 'widget.admin.qualifications.skill.window',
-    requires: ['RM.view.admin.qualifications.skill.Form'],
+    alias: 'widget.admin.employee.window',
+    requires: ['RM.view.admin.employee.Form'],
     modal: true,
     width: 500,
     height: 250,
@@ -19,7 +19,7 @@ Ext.define('RM.view.admin.qualifications.skill.Window', {
         Ext.applyIf(me, {
             items: [
             {
-                xtype: 'admin.qualifications.skill.form',
+                xtype: 'admin.employee.form',
                 border: false
             }
             ],
@@ -31,13 +31,13 @@ Ext.define('RM.view.admin.qualifications.skill.Window', {
                 items: [
                 {
                     xtype: 'button',
-                    itemId: 'cancel-skills-btn',
+                    itemId: 'cancel-employees-btn',
                     text: 'Cancel'
                 },
                 '->',
                 {
                     xtype: 'button',
-                    itemId: 'save-skills-btn',
+                    itemId: 'save-employees-btn',
                     text: 'Save'
                 }
                 ]
