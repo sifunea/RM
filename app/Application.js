@@ -8,7 +8,6 @@ Ext.define('RM.Application', {
            'RM.extension.Loader'
     ],
     views: [
-        'Viewport'
         // TODO: add views here
     ],
 
